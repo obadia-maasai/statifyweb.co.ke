@@ -3,6 +3,7 @@ import "../App.css"
 // import moment from 'moment';
 import emailjs from 'emailjs-com';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import header from "../assests/images/carousel-1.jpg"
 // import PageHeader from '../components/PageHeader';
 
 const ContactUs = () => {
@@ -56,115 +57,209 @@ const ContactUs = () => {
 
   return (
     <div>
-      {/* <PageHeader/> */}
+      <div
+  className="container-fluid page-header py-1 mb-2 wow fadeIn justify-content-center text-center"
+  data-wow-delay="0.1s"
+  style={{
+    backgroundImage: `url(${header})`, // Replace 'header' with the correct image path
+    backgroundSize: "cover", // Ensures the image covers the entire background
+    backgroundPosition: "center", // Centers the background image
+    backgroundRepeat: "no-repeat", // Prevents tiling of the image
+    height: "200px", // Reduced height to make it slimmer
+  }}
+>
+  <div className="container py-2">
+    <h1
+      className="display-5 mb-2 animated slideInDown"
+      style={{ color: '#FFA916',fontWeight:"bolder" }}
+    >
+      Contact Us
+    </h1>
+    <nav
+      aria-label="breadcrumb"
+      className="animated slideInDown"
+    >
+      <ol className="breadcrumb text-uppercase mb-0 justify-content-center text-center">
+        <li className="breadcrumb-item">
+          <a href="/" style={{ color: '#FFA916' ,fontWeight:"bold"}}>
+            Home
+          </a>
+        </li>
+        <li className="breadcrumb-item">
+          <p href="#" style={{ color: '#FFA916', marginBottom: 0 }}>
+            Pages
+          </p>
+        </li>
+        <li
+          className="breadcrumb-item  active"
+          aria-current="page"
+          style={{ color: '#024A59',fontWeight:"bold" }}
+        >
+          Contact Us
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
       {/* Appointment Section Start */}
       <div className="container-xxl py-5">
-        <div className="container">
-          <div className="row g-5">
-            {/* Appointment Description */}
-            <div className="col-lg-6">
-              <p className="d-inline-block border rounded-pill py-1 px-4" style={{ backgroundColor: '#024A59', color: '#FFA916' }}>
-                Book Demo
-              </p>
-              <h1 style={{ color: 'black' }} className="mb-4">
-                Make An Appointment To Visit Our Company
-              </h1>
-              <p style={{ color: 'black' }} className="mb-4">
-                Book a visit to our company and explore our services firsthand. Meet our expert team, discuss your needs, and discover tailored solutions in a welcoming environment. Schedule your appointment today!
-              </p>
-            </div>
-            {/* Appointment Form */}
-            <div className="col-lg-6">
-              <div className="rounded h-100 d-flex align-items-center p-5" style={{ backgroundColor: '#024A59' }}>
-                <form onSubmit={handleBookingSubmit}>
-                  <div className="row g-3">
-                    <div className="col-12 col-sm-6">
-                      <input
-                        style={{ color: 'black' }}
-                        type="text"
-                        name="from_name"
-                        className="form-control border-0"
-                        placeholder="Your Name"
-                        value={formData.from_name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="col-12 col-sm-6">
-                      <input
-                        style={{ color: 'black' }}
-                        type="email"
-                        name="from_email"
-                        className="form-control border-0"
-                        placeholder="Your Email"
-                        value={formData.from_email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="col-12 col-sm-6">
-                      <input
-                        style={{ color: 'black' }}
-                        type="text"
-                        name="from_mobile"
-                        className="form-control border-0"
-                        placeholder="Your Mobile"
-                        value={formData.from_mobile}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="col-12 col-sm-6">
-                      <input
-                        style={{ color: 'black' }}
-                        type="date"
-                        name="from_date"
-                        className="form-control border-0"
-                        value={formData.from_date}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="col-12 col-sm-6">
-                      <input
-                        style={{ color: 'black' }}
-                        type="time"
-                        name="from_time"
-                        className="form-control border-0"
-                        value={formData.from_time}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="col-12">
-                      <textarea
-                        style={{ color: 'black' }}
-                        name="problem_description"
-                        className="form-control border-0"
-                        rows="5"
-                        placeholder="Describe your problem"
-                        value={formData.problem_description}
-                        onChange={handleChange}
-                        required
-                      ></textarea>
-                    </div>
-                    <div className="col-12">
-                      <button
-                        style={{ backgroundColor: '#FFA916', color: '#024A59' }}
-                        className="btn w-100 py-3"
-                        type="submit"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? 'Sending...' : 'Book Appointment'}
-                      </button>
-                    </div>
-                  </div>
-                </form>
+  <div className="container">
+    <div className="row g-5">
+      {/* Appointment Description */}
+      <div
+        className="col-lg-6"
+        style={{
+          animation: 'slideInLeft 1s ease-in-out',
+          animationFillMode: 'both',
+        }}
+      >
+        <p
+          className="d-inline-block border rounded-pill py-1 px-4"
+          style={{
+            backgroundColor: '#024A59',
+            color: '#FFA916',
+          }}
+        >
+          Book Demo
+        </p>
+        <h1 style={{ color: 'black' }} className="mb-4">
+          Make An Appointment To Visit Our Company
+        </h1>
+        <p style={{ color: 'black' }} className="mb-4">
+          Book a visit to our company and explore our services firsthand. Meet
+          our expert team, discuss your needs, and discover tailored solutions
+          in a welcoming environment. Schedule your appointment today!
+        </p>
+      </div>
+      {/* Appointment Form */}
+      <div
+        className="col-lg-6"
+        style={{
+          animation: 'slideInRight 1s ease-in-out',
+          animationFillMode: 'both',
+        }}
+      >
+        <div
+          className="rounded h-100 d-flex align-items-center p-5"
+          style={{ backgroundColor: '#024A59' }}
+        >
+          <form onSubmit={handleBookingSubmit}>
+            <div className="row g-3">
+              <div className="col-12 col-sm-6">
+                <input
+                  style={{ color: 'black' }}
+                  type="text"
+                  name="from_name"
+                  className="form-control border-0"
+                  placeholder="Your Name"
+                  value={formData.from_name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="col-12 col-sm-6">
+                <input
+                  style={{ color: 'black' }}
+                  type="email"
+                  name="from_email"
+                  className="form-control border-0"
+                  placeholder="Your Email"
+                  value={formData.from_email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="col-12 col-sm-6">
+                <input
+                  style={{ color: 'black' }}
+                  type="text"
+                  name="from_mobile"
+                  className="form-control border-0"
+                  placeholder="Your Mobile"
+                  value={formData.from_mobile}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="col-12 col-sm-6">
+                <input
+                  style={{ color: 'black' }}
+                  type="date"
+                  name="from_date"
+                  className="form-control border-0"
+                  value={formData.from_date}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="col-12 col-sm-6">
+                <input
+                  style={{ color: 'black' }}
+                  type="time"
+                  name="from_time"
+                  className="form-control border-0"
+                  value={formData.from_time}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="col-12">
+                <textarea
+                  style={{ color: 'black' }}
+                  name="problem_description"
+                  className="form-control border-0"
+                  rows="5"
+                  placeholder="Describe your problem"
+                  value={formData.problem_description}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+              </div>
+              <div className="col-12">
+                <button
+                  style={{ backgroundColor: '#FFA916', color: '#024A59' }}
+                  className="btn w-100 py-3"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Book Appointment'}
+                </button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  `}
+</style>
+
       {/* Appointment Section End */}
 
       {/* Contact Section Start */}

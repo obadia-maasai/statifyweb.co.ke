@@ -1,89 +1,148 @@
 import React from 'react';
-import "../App.css"
-// import { Link } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
 
 const Topbar = () => {
   return (
-    <div className="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+    <div style={{ width: '100%', margin: 0, padding: 0 }}>
       <div
-        style={{ backgroundColor: '#024A59', color: '#FFA916' }}
-        className="row gx-0 d-none d-lg-flex"
+        style={{
+          backgroundColor: '#024A59',
+          color: '#FFA916',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '5px 20px',
+          fontSize: '12px',
+        }}
       >
         {/* Left Section */}
-        <div className="col-lg-7 px-5 text-start">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           {/* Email Section */}
-          <div className="h-100 d-inline-flex py-3 me-4">
-            <small style={{ color: '#FFA916' }} className="far fa-envelope text-primary me-2"></small>
-            <small>
-              <a
-                href="mailto:info@statify.co.ke"
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                info@statify.co.ke
-              </a>
-            </small>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <i
+              className="far fa-envelope"
+              style={{ color: '#FFA916', fontSize: '14px' }}
+            ></i>
+            <a
+              href="mailto:info@statify.co.ke"
+              style={{ textDecoration: 'none', color: '#FFA916' }}
+            >
+              info@statify.co.ke
+            </a>
           </div>
 
           {/* Location Section */}
-          <div className="h-100 d-inline-flex  py-3">
-            <small style={{ color: '#FFA916' }} className="fa fa-map-marker-alt text-primary me-2"></small>
-            <small>Ngong, Uptown Mall</small>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <i
+              className="fa fa-map-marker-alt"
+              style={{ color: '#FFA916', fontSize: '14px' }}
+            ></i>
+            <span>Ngong, Uptown Mall</span>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="col-lg-5 px-5 text-end">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           {/* Phone Numbers */}
-          <div className="h-100 d-inline-flex py-3 me-4">
-            <small style={{ color: '#FFA916' }} className="fa fa-phone-alt text-primary me-2"></small>
-            <small>
-              <p
-                onClick={() => window.open('https://wa.me/254796265933', '_blank')}
-                style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
-              >
-                +254796265933
-              </p>
-              <br />
-              <p
-                onClick={() => window.open('https://wa.me/254728813009', '_blank')}
-                style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
-              >
-                +254728813009
-              </p>
-            </small>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+            <div
+              onClick={() => window.open('https://wa.me/254796265933', '_blank')}
+              style={{
+                textDecoration: 'none',
+                color: '#FFA916',
+                cursor: 'pointer',
+              }}
+            >
+              +254796265933
+            </div>
+            <div
+              onClick={() => window.open('https://wa.me/254728813009', '_blank')}
+              style={{
+                textDecoration: 'none',
+                color: '#FFA916',
+                cursor: 'pointer',
+              }}
+            >
+              +254728813009
+            </div>
           </div>
 
           {/* Social Media Icons */}
-          <div className="h-100 d-inline-flex align-items-center">
-            <button
-              onClick={() => window.open('https://facebook.com', '_blank')}
-              style={{ color: 'white' }}
-              className="btn btn-sm-square rounded-circle bg-yellow text-primary me-1"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </button>
-            <button
-              onClick={() => window.open('https://twitter.com', '_blank')}
-              style={{ color: 'white' }}
-              className="btn btn-sm-square rounded-circle bg-yellow text-primary me-1"
-            >
-              <i className="fab fa-twitter"></i>
-            </button>
-            <button
-              onClick={() => window.open('https://linkedin.com', '_blank')}
-              style={{ color: 'white' }}
-              className="btn btn-sm-square rounded-circle bg-yellow  me-1"
-            >
-              <i className="fab fa-linkedin-in"></i>
-            </button>
-            <button
-              onClick={() => window.open('https://instagram.com', '_blank')}
-              style={{ color: 'white' }}
-              className="btn btn-sm-square rounded-circle bg-yellow  me-0"
-            >
-              <i className="fab fa-instagram"></i>
-            </button>
-          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+  <button
+    onClick={() => window.open('https://facebook.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faFacebookF} />
+  </button>
+  <button
+    onClick={() => window.open('https://twitter.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faTwitter} />
+  </button>
+  <button
+    onClick={() => window.open('https://linkedin.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faLinkedinIn} />
+  </button>
+  <button
+    onClick={() => window.open('https://instagram.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faInstagram} />
+  </button>
+</div>
+
         </div>
       </div>
     </div>

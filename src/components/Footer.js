@@ -1,6 +1,12 @@
 import React from 'react';
 import logo from "../assests/images/logo.jpg"
 import "../App.css"
+import 'font-awesome/css/font-awesome.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
+
 const Footer = () => {
   return (
     <div className="container-fluid text-light footer mt-5 pt-5" style={{ backgroundColor: '#024A59' }}>
@@ -14,12 +20,77 @@ const Footer = () => {
               <a href="https://wa.me/254728813009" style={{ textDecoration: 'none', color: 'inherit' }}>+254728813009</a>
             </p>
             <p><i className="fa fa-envelope me-3"></i>info@statify.co.ke</p>
-            <div className="d-flex pt-2">
-              <p className="btn btn-outline-light btn-social rounded-circle" href="#"><i className="fab fa-twitter"></i></p>
-              <p className="btn btn-outline-light btn-social rounded-circle" href="#"><i className="fab fa-facebook-f"></i></p>
-              <p className="btn btn-outline-light btn-social rounded-circle" href="#"><i className="fab fa-youtube"></i></p>
-              <p className="btn btn-outline-light btn-social rounded-circle" href="#"><i className="fab fa-linkedin-in"></i></p>
-            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+  <button
+    onClick={() => window.open('https://facebook.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faFacebookF} />
+  </button>
+  <button
+    onClick={() => window.open('https://twitter.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faTwitter} />
+  </button>
+  <button
+    onClick={() => window.open('https://linkedin.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faLinkedinIn} />
+  </button>
+  <button
+    onClick={() => window.open('https://instagram.com', '_blank')}
+    style={{
+      backgroundColor: '#FFA916',
+      border: 'none',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      color: '#024A59',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <FontAwesomeIcon icon={faInstagram} />
+  </button>
+</div>
+
           </div>
           <div className="col-lg-3 col-md-6">
             <h5 className="mb-4">Services</h5>
