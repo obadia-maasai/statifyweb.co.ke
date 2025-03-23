@@ -496,7 +496,7 @@ import business from "../assests/images/business-central-icon.png";
 import dynamicsicon from "../assests/images/dynamics-icon.png";
 import crm from "../assests/images/crm-icon.png";
 import azure from "../assests/images/azure-icon.png";
-import carousel1 from "../assests/images/carousel-1.jpg";
+// import carousel1 from "../assests/images/carousel-1.jpg";l
 import header from "../assests/images/about-1.jpg";
 
 const ProductsPage = () => {
