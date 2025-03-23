@@ -3,6 +3,7 @@ import "../App.css"
 import emailjs from 'emailjs-com';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import header from "../assests/images/carousel-1.jpg"
+import Swal from 'sweetalert2';
 
 
 const ContactUs = () => {
@@ -35,7 +36,15 @@ const ContactUs = () => {
       .send('service_d72c317', 'template_m2utjtl', templateParams)
       .then(
         () => {
-          alert('Appointment booked successfully! Check your email for confirmation.');
+          Swal.fire({
+            title: 'Success!',
+            text: 'Appointment booked successfully! Check your email for confirmation.',
+            icon: 'success',
+            confirmButtonColor: '#024A59',
+            customClass: {
+              confirmButton: 'swal-confirm-button'
+            }
+          });
           setFormData({
             from_name: '',
             from_email: '',
@@ -48,7 +57,12 @@ const ContactUs = () => {
         },
         (error) => {
           console.error('EmailJS Error:', error);
-          alert('Failed to send email. Please try again later.');
+          Swal.fire({
+            title: 'Error!',
+            text: 'Failed to send email. Please try again later.',
+            icon: 'error',
+            confirmButtonColor: '#024A59'
+          });
           setIsSubmitting(false);
         }
       );
@@ -256,6 +270,17 @@ const ContactUs = () => {
         opacity: 1;
       }
     }
+         .swal-confirm-button {
+        background-color: #FFA916 !important;
+        color: #024A59 !important;
+        border: none !important;
+      }
+      .swal-title {
+        color: #024A59 !important;
+      }
+      .swal-text {
+        color: #024A59 !important;
+      }
   `}
 </style>
 

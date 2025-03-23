@@ -490,25 +490,356 @@
 
 // export default ProductsPage;
 
-import React from "react";
+// import React from "react";
+// import "../App.css";
+// import business from "../assests/images/business-central-icon.png";
+// import dynamicsicon from "../assests/images/dynamics-icon.png";
+// import crm from "../assests/images/crm-icon.png";
+// import azure from "../assests/images/azure-icon.png";
+// // import carousel1 from "../assests/images/carousel-1.jpg";l
+// import header from "../assests/images/about-1.jpg";
+
+// const ProductsPage = () => {
+//   const industries = [
+//     { name: "Healthcare", icon: "bi bi-heart-pulse", image: "healthcare.jpg" },
+//     { name: "Finance", icon: "bi bi-cash-coin", image: "finance.jpg" },
+//     { name: "Manufacturing", icon: "bi bi-gear", image: "manufacturing.jpg" },
+//     { name: "Retail", icon: "bi bi-cart", image: "retail.jpg" },
+//     { name: "Education", icon: "bi bi-book", image: "education.jpg" },
+//     { name: "Logistics", icon: "bi bi-truck", image: "logistics.jpg" },
+//     { name: "Hospitality", icon: "bi bi-house-door", image: "hospitality.jpg" },
+//     { name: "Government", icon: "bi bi-bank", image: "government.jpg" },
+//   ];
+//   return (
+//     <>
+//       {/* Page Header */}
+//       <div
+//         className="container-fluid page-header py-1 mb-2 wow fadeIn"
+//         data-wow-delay="0.1s"
+//         style={{
+//           background: `linear-gradient(rgba(2, 74, 89, 0.7), rgba(2, 74, 89, 0.7)), url(${header})`,
+//           backgroundSize: "cover",
+//           backgroundPosition: "center",
+//           height: "300px",
+//           display: "flex",
+//           alignItems: "center",
+//           justifyContent: "center"
+//         }}
+//       >
+//         <div className="container text-center">
+//           <h1 className="display-4 text-white mb-3 animated slideInDown">
+//             Our Products
+//           </h1>
+//           <nav aria-label="breadcrumb" className="animated slideInDown">
+//             <ol className="breadcrumb justify-content-center mb-0">
+//               <li className="breadcrumb-item">
+//                 <a className="text-white" href="/">
+//                   Home
+//                 </a>
+//               </li>
+//               <li className="breadcrumb-item">
+//                 <a className="text-white" href="/">
+//                   Pages
+//                 </a>
+//               </li>
+//               <li className="breadcrumb-item text-yellow active" style={{color:"#FFA916"}} aria-current="page">
+//                 Products
+//               </li>
+//             </ol>
+//           </nav>
+//         </div>
+//       </div>
+
+//       {/* Products Section */}
+//       <div className="container-xxl py-5">
+//         <div className="container">
+//           <div className="text-center mx-auto mb-5" style={{ maxWidth: "600px" }}>
+//             <h2 className="section-title text-gradient">Our Solutions</h2>
+//             <p className="lead text-muted">
+//               Cutting-edge solutions designed to empower your business with seamless integrations
+//               and superior performance.
+//             </p>
+//           </div>
+//           <div className="row g-4">
+//             {[
+//               { img: dynamicsicon, title: "Microsoft Dynamics 365 Office", 
+//                 text: "Enhance productivity and collaboration with powerful business tools." },
+//               { img: business, title: "Dynamics 365 Business Central/NAV", 
+//                 text: "Streamline operations and drive growth with all-in-one management." },
+//               { img: crm, title: "Microsoft Dynamics CRM", 
+//                 text: "Build strong customer relationships with intuitive CRM tools." },
+//               { img: azure, title: "Microsoft Azure", 
+//                 text: "Leverage cloud power for unparalleled scalability and performance." }
+//             ].map((product, index) => (
+//               <div key={index} className="col-lg-3 col-md-6">
+//                 <div className="product-card animated-card">
+//                   <div className="icon-box bg-primary">
+//                     <img src={product.img} alt={product.title} />
+//                   </div>
+//                   <h5 className="mt-4">{product.title}</h5>
+//                   <p className="text-muted">{product.text}</p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Feature Section */}
+//       <div className="container-fluid feature-section py-5">
+//         <div className="container">
+//           <div className="text-center mb-5">
+//             <h2 className="section-title text-white">Core Features</h2>
+//           </div>
+//           <div className="row g-4">
+//             {[
+//               { title: "Finance & Accounting", 
+//                 text: "Comprehensive financial management solutions" },
+//               { title: "Supply Chain", 
+//                 text: "End-to-end supply chain optimization" },
+//               { title: "HR & Payroll", 
+//                 text: "Automated workforce management systems" },
+//               { title: "Business Intelligence", 
+//                 text: "Advanced analytics and reporting tools" }
+//             ].map((feature, index) => (
+//               <div key={index} className="col-lg-3 col-md-6">
+//                 <div className="feature-card">
+//                   <div className="feature-icon">
+//                     <i className="bi bi-graph-up"></i>
+//                   </div>
+//                   <h5>{feature.title}</h5>
+//                   <p>{feature.text}</p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Industries Section */}
+//       <div
+//       style={{
+//         backgroundColor: "#f8f9fa",
+//         padding: "60px 0",
+//         animation: "fadeIn 1s ease-in-out",
+//       }}
+//     >
+//       <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
+//         <div style={{ marginBottom: "40px" }}>
+//           <h2 style={{ fontSize: "2rem", fontWeight: "bold", color: "#333" }}>
+//             Industries We Serve
+//           </h2>
+//           <p style={{ fontSize: "1.1rem", color: "#6c757d" }}>
+//             Delivering tailored solutions across multiple sectors
+//           </p>
+//         </div>
+//         <div
+//           style={{
+//             display: "grid",
+//             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+//             gap: "20px",
+//             justifyContent: "center",
+//           }}
+//         >
+//           {industries.map((industry, index) => (
+//             <div
+//               key={index}
+//               style={{
+//                 position: "relative",
+//                 background: `url(${industry.image}) center/cover`,
+//                 padding: "60px 20px",
+//                 borderRadius: "10px",
+//                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+//                 textAlign: "center",
+//                 color: "#fff",
+//                 transition: "transform 0.3s ease-in-out",
+//                 cursor: "pointer",
+//                 overflow: "hidden",
+//               }}
+//               onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+//               onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+//             >
+//               <div
+//                 style={{
+//                   position: "absolute",
+//                   top: "0",
+//                   left: "0",
+//                   width: "100%",
+//                   height: "100%",
+//                   backgroundColor: "rgba(0, 0, 0, 0.5)",
+//                   transition: "opacity 0.3s ease-in-out",
+//                 }}
+//               />
+//               <div style={{ position: "relative", zIndex: 2 }}>
+//                 <div
+//                   style={{
+//                     fontSize: "40px",
+//                     marginBottom: "10px",
+//                     animation: "bounce 1.5s infinite",
+//                   }}
+//                 >
+//                   <i className={industry.icon}></i>
+//                 </div>
+//                 <h6
+//                   style={{
+//                     fontSize: "1.2rem",
+//                     fontWeight: "bold",
+//                     letterSpacing: "1px",
+//                   }}
+//                 >
+//                   {industry.name}
+//                 </h6>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       </div>
+
+
+//       {/* Styles */}
+//       <style jsx>{`
+//         .section-title {
+//           font-size: 2.5rem;
+//           font-weight: 700;
+//           margin-bottom: 1rem;
+//           position: relative;
+//           display: inline-block;
+//         } 
+          
+//           @keyframes fadeIn {
+//             from { opacity: 0; transform: translateY(20px); }
+//             to { opacity: 1; transform: translateY(0); }
+//           }
+
+//           @keyframes bounce {
+//             0%, 100% { transform: translateY(0); }
+//             50% { transform: translateY(-10px); }
+//           }
+        
+
+//         .section-title.text-gradient {
+//           background: linear-gradient(45deg, #024A59, #FFA916);
+//           -webkit-background-clip: text;
+//           -webkit-text-fill-color: transparent;
+//         }
+
+//         .product-card {
+//           background: white;
+//           border-radius: 15px;
+//           padding: 2rem;
+//           margin-bottom: 1rem;
+//           transition: all 0.3s ease;
+//           box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+//         }
+
+//         .product-card:hover {
+//           transform: translateY(-10px);
+//           box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+//         }
+
+//         .icon-box {
+//           width: 80px;
+//           height: 80px;
+//           border-radius: 50%;
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           margin: 0 auto 1.5rem;
+//           transition: all 0.3s ease;
+//         }
+
+//         .feature-section {
+//           background: linear-gradient(45deg, #024A59, #006272);
+//           color: white;
+//           position: relative;
+//           overflow: hidden;
+//         }
+
+//         .feature-card {
+//           background: rgba(255,255,255,0.1);
+//           padding: 2rem;
+//           border-radius: 15px;
+//           backdrop-filter: blur(10px);
+//           transition: all 0.3s ease;
+//         }
+
+//         .industry-card {
+//           background: #f8f9fa;
+//           padding: 1.5rem;
+//           border-radius: 10px;
+//           text-align: center;
+//           transition: all 0.3s ease;
+//         }
+
+//         .industry-card:hover {
+//           background: #024A59;
+//           color: white;
+//           transform: translateY(-5px);
+//         }
+
+//         @keyframes float {
+//           0% { transform: translateY(0px); }
+//           50% { transform: translateY(-20px); }
+//           100% { transform: translateY(0px); }
+//         }
+
+//         .animated-card {
+//           animation: float 4s ease-in-out infinite;
+//         }
+
+//         @media (max-width: 768px) {
+//           .section-title {
+//             font-size: 2rem;
+//           }
+//         }
+//       `}</style>
+//     </>
+//   );
+// };
+
+// export default ProductsPage;
+
+import React, { useEffect } from "react";
 import "../App.css";
 import business from "../assests/images/business-central-icon.png";
 import dynamicsicon from "../assests/images/dynamics-icon.png";
 import crm from "../assests/images/crm-icon.png";
 import azure from "../assests/images/azure-icon.png";
 import header from "../assests/images/about-1.jpg";
+// import why from '../assests/images/carousel-1.jpg'
+import WhyChooseUs from "./WhyChooseUs";
 
 const ProductsPage = () => {
   const industries = [
-    { name: "Healthcare", icon: "bi bi-heart-pulse", image: "healthcare.jpg" },
-    { name: "Finance", icon: "bi bi-cash-coin", image: "finance.jpg" },
-    { name: "Manufacturing", icon: "bi bi-gear", image: "manufacturing.jpg" },
-    { name: "Retail", icon: "bi bi-cart", image: "retail.jpg" },
-    { name: "Education", icon: "bi bi-book", image: "education.jpg" },
-    { name: "Logistics", icon: "bi bi-truck", image: "logistics.jpg" },
-    { name: "Hospitality", icon: "bi bi-house-door", image: "hospitality.jpg" },
-    { name: "Government", icon: "bi bi-bank", image: "government.jpg" },
+    { name: "Healthcare", icon: "bi bi-heart-pulse", color: "#024A59" },
+    { name: "Finance", icon: "bi bi-cash-coin", color: "#FFA916" },
+    { name: "Manufacturing", icon: "bi bi-gear", color: "#024A59" },
+    { name: "Retail", icon: "bi bi-cart", color: "#FFA916" },
+    { name: "Education", icon: "bi bi-book", color: "#024A59" },
+    { name: "Logistics", icon: "bi bi-truck", color: "#FFA916" },
+    { name: "Hospitality", icon: "bi bi-house-door", color: "#024A59" },
+    { name: "Government", icon: "bi bi-bank", color: "#FFA916" },
   ];
+
+  useEffect(() => {
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.scroll-animate');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const isVisible = elementTop < window.innerHeight && elementBottom >= 0;
+        
+        if (isVisible) {
+          element.classList.add('animated');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    return () => window.removeEventListener('scroll', animateOnScroll);
+  }, []);
+
   return (
     <>
       {/* Page Header */}
@@ -553,30 +884,53 @@ const ProductsPage = () => {
       <div className="container-xxl py-5">
         <div className="container">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: "600px" }}>
-            <h2 className="section-title text-gradient">Our Solutions</h2>
-            <p className="lead text-muted">
+            <h2 className="section-title text-gradient scroll-animate">Our Solutions</h2>
+            <p className="lead text-muted scroll-animate">
               Cutting-edge solutions designed to empower your business with seamless integrations
               and superior performance.
             </p>
           </div>
           <div className="row g-4">
             {[
-              { img: dynamicsicon, title: "Microsoft Dynamics 365 Office", 
-                text: "Enhance productivity and collaboration with powerful business tools." },
-              { img: business, title: "Dynamics 365 Business Central/NAV", 
-                text: "Streamline operations and drive growth with all-in-one management." },
-              { img: crm, title: "Microsoft Dynamics CRM", 
-                text: "Build strong customer relationships with intuitive CRM tools." },
-              { img: azure, title: "Microsoft Azure", 
-                text: "Leverage cloud power for unparalleled scalability and performance." }
+              { 
+                img: dynamicsicon, 
+                title: "Microsoft Dynamics 365 Office", 
+                text: "Enhance productivity and collaboration with powerful business tools.",
+                features: ["ERP Integration", "Real-time Analytics", "Workflow Automation"]
+              },
+              { 
+                img: business, 
+                title: "Dynamics 365 Business Central/NAV", 
+                text: "Streamline operations and drive growth with all-in-one management.",
+                features: ["Financial Management", "Supply Chain", "Project Management"]
+              },
+              { 
+                img: crm, 
+                title: "Microsoft Dynamics CRM", 
+                text: "Build strong customer relationships with intuitive CRM tools.",
+                features: ["Customer Insights", "Sales Automation", "Service Management"]
+              },
+              { 
+                img: azure, 
+                title: "Microsoft Azure", 
+                text: "Leverage cloud power for unparalleled scalability and performance.",
+                features: ["Cloud Computing", "AI Services", "IoT Integration"]
+              }
             ].map((product, index) => (
-              <div key={index} className="col-lg-3 col-md-6">
+              <div key={index} className="col-lg-3 col-md-6 scroll-animate">
                 <div className="product-card animated-card">
                   <div className="icon-box bg-primary">
                     <img src={product.img} alt={product.title} />
                   </div>
                   <h5 className="mt-4">{product.title}</h5>
-                  <p className="text-muted">{product.text}</p>
+                  <p className="text-muted mb-3">{product.text}</p>
+                  <div className="features-list">
+                    {product.features.map((feature, fIndex) => (
+                      <span key={fIndex} className="feature-badge">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -584,30 +938,23 @@ const ProductsPage = () => {
         </div>
       </div>
 
-      {/* Feature Section */}
-      <div className="container-fluid feature-section py-5">
+      {/* Stats Section */}
+      <div className="container-fluid py-5 stats-section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="section-title text-white">Core Features</h2>
-          </div>
-          <div className="row g-4">
+          <div className="row g-4 text-center">
             {[
-              { title: "Finance & Accounting", 
-                text: "Comprehensive financial management solutions" },
-              { title: "Supply Chain", 
-                text: "End-to-end supply chain optimization" },
-              { title: "HR & Payroll", 
-                text: "Automated workforce management systems" },
-              { title: "Business Intelligence", 
-                text: "Advanced analytics and reporting tools" }
-            ].map((feature, index) => (
-              <div key={index} className="col-lg-3 col-md-6">
-                <div className="feature-card">
-                  <div className="feature-icon">
-                    <i className="bi bi-graph-up"></i>
-                  </div>
-                  <h5>{feature.title}</h5>
-                  <p>{feature.text}</p>
+              { number: 150, title: "Happy Clients" },
+              { number: 95, title: "Projects Completed", plus: "%" },
+              { number: 300, title: "Team Members", plus: "+" },
+              { number: 24, title: "Support Hours", plus: "/7" }
+            ].map((stat, index) => (
+              <div key={index} className="col-lg-3 col-md-6 scroll-animate">
+                <div className="stat-card">
+                  <h2 className="stat-number">
+                    {stat.number}
+                    <span className="stat-plus">{stat.plus}</span>
+                  </h2>
+                  <p className="stat-title">{stat.title}</p>
                 </div>
               </div>
             ))}
@@ -616,106 +963,109 @@ const ProductsPage = () => {
       </div>
 
       {/* Industries Section */}
-      <div
-      style={{
-        backgroundColor: "#f8f9fa",
-        padding: "60px 0",
-        animation: "fadeIn 1s ease-in-out",
-      }}
-    >
-      <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-        <div style={{ marginBottom: "40px" }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "bold", color: "#333" }}>
-            Industries We Serve
-          </h2>
-          <p style={{ fontSize: "1.1rem", color: "#6c757d" }}>
-            Delivering tailored solutions across multiple sectors
-          </p>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "20px",
-            justifyContent: "center",
-          }}
-        >
-          {industries.map((industry, index) => (
-            <div
-              key={index}
-              style={{
-                position: "relative",
-                background: `url(${industry.image}) center/cover`,
-                padding: "60px 20px",
-                borderRadius: "10px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                textAlign: "center",
-                color: "#fff",
-                transition: "transform 0.3s ease-in-out",
-                cursor: "pointer",
-                overflow: "hidden",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            >
-              <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  transition: "opacity 0.3s ease-in-out",
-                }}
-              />
-              <div style={{ position: "relative", zIndex: 2 }}>
-                <div
-                  style={{
-                    fontSize: "40px",
-                    marginBottom: "10px",
-                    animation: "bounce 1.5s infinite",
-                  }}
+      <div className="container-fluid industries-section py-5">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="section-title text-white scroll-animate">Industries We Serve</h2>
+            <p className="text-light scroll-animate">Tailored solutions for diverse industry needs</p>
+          </div>
+          <div className="row g-4">
+            {industries.map((industry, index) => (
+              <div key={index} className="col-lg-3 col-md-6 scroll-animate">
+                <div 
+                  className="industry-card"
+                  style={{ backgroundColor: industry.color }}
                 >
-                  <i className={industry.icon}></i>
+                  <div className="industry-icon">
+                    <i className={industry.icon}></i>
+                  </div>
+                  <h5>{industry.name}</h5>
                 </div>
-                <h6
-                  style={{
-                    fontSize: "1.2rem",
-                    fontWeight: "bold",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  {industry.name}
-                </h6>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Why Choose Us */}
+      {/* <div className="container-xxl py-5">
+        <div className="container">
+          <div className="row g-5 align-items-center">
+            <div className="col-lg-6 scroll-animate">
+              <img 
+                src={why} 
+                alt="Why Choose Us" 
+                className="img-fluid rounded-3 shadow"
+              />
+            </div>
+            <div className="col-lg-6 scroll-animate">
+              <h2 className="section-title text-gradient mb-4">Why Choose Us?</h2>
+              <div className="d-flex mb-4">
+                <div className="icon-box-sm bg-primary">
+                  <i className="bi bi-award"></i>
+                </div>
+                <div className="ms-4">
+                  <h5>Certified Experts</h5>
+                  <p className="mb-0">Microsoft certified professionals with industry expertise</p>
+                </div>
+              </div>
+              <div className="d-flex mb-4">
+                <div className="icon-box-sm bg-primary">
+                  <i className="bi bi-clock-history"></i>
+                </div>
+                <div className="ms-4">
+                  <h5>Fast Implementation</h5>
+                  <p className="mb-0">Rapid deployment with minimal business disruption</p>
+                </div>
+              </div>
+              <div className="d-flex">
+                <div className="icon-box-sm bg-primary">
+                  <i className="bi bi-shield-check"></i>
+                </div>
+                <div className="ms-4">
+                  <h5>Secure Solutions</h5>
+                  <p className="mb-0">Enterprise-grade security and compliance</p>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-      </div>
-
-
-      {/* Styles */}
+      </div> */}
+<WhyChooseUs/>
       <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+          from { transform: translateX(-100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+          100% { transform: translateY(0px); }
+        }
+
+        .scroll-animate {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.6s ease-out;
+        }
+
+        .scroll-animate.animated {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
         .section-title {
           font-size: 2.5rem;
           font-weight: 700;
           margin-bottom: 1rem;
           position: relative;
-          display: inline-block;
-        } 
-          
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-
-          @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-          }
-        
+        }
 
         .section-title.text-gradient {
           background: linear-gradient(45deg, #024A59, #FFA916);
@@ -730,6 +1080,7 @@ const ProductsPage = () => {
           margin-bottom: 1rem;
           transition: all 0.3s ease;
           box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+          height: 100%;
         }
 
         .product-card:hover {
@@ -746,49 +1097,75 @@ const ProductsPage = () => {
           justify-content: center;
           margin: 0 auto 1.5rem;
           transition: all 0.3s ease;
+          background: linear-gradient(45deg, #024A59, #006272);
         }
 
-        .feature-section {
+        .features-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-top: 1rem;
+        }
+
+        .feature-badge {
+          background: rgba(2, 74, 89, 0.1);
+          color: #024A59;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 0.9rem;
+        }
+
+        .stats-section {
           background: linear-gradient(45deg, #024A59, #006272);
           color: white;
-          position: relative;
-          overflow: hidden;
         }
 
-        .feature-card {
-          background: rgba(255,255,255,0.1);
+        .stat-card {
           padding: 2rem;
+          background: rgba(255,255,255,0.1);
           border-radius: 15px;
-          backdrop-filter: blur(10px);
-          transition: all 0.3s ease;
+          backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+          font-size: 3rem;
+          font-weight: 700;
+          color: #FFA916;
+        }
+
+        .industries-section {
+          background: #f8f9fa;
         }
 
         .industry-card {
-          background: #f8f9fa;
-          padding: 1.5rem;
-          border-radius: 10px;
+          padding: 2rem;
           text-align: center;
+          border-radius: 15px;
+          color: white;
           transition: all 0.3s ease;
+          min-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
         .industry-card:hover {
-          background: #024A59;
-          color: white;
-          transform: translateY(-5px);
+          transform: scale(1.05);
         }
 
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0px); }
-        }
-
-        .animated-card {
-          animation: float 4s ease-in-out infinite;
+        .industry-icon {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          animation: float 3s ease-in-out infinite;
         }
 
         @media (max-width: 768px) {
           .section-title {
+            font-size: 2rem;
+          }
+          
+          .stat-number {
             font-size: 2rem;
           }
         }
@@ -798,4 +1175,3 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
-

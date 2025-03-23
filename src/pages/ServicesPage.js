@@ -213,8 +213,10 @@
 import React from "react";
 import "../App.css";
 import header from "../assests/images/about-2.jpg";
+import {  useNavigate} from 'react-router-dom'; 
 
 const Services = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* Hero Header Section */}
@@ -655,28 +657,29 @@ const Services = () => {
             optimize your business operations
           </p>
           <button
-            style={{
-              backgroundColor: "#024A59",
-              color: "#fff",
-              padding: "15px 40px",
-              borderRadius: "30px",
-              border: "none",
-              fontSize: "1.1rem",
-              fontWeight: "600",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-            }}
-            onMouseOver={(e) => {
-              e.target.style.backgroundColor = "#01303b";
-              e.target.style.transform = "translateY(-2px)";
-            }}
-            onMouseOut={(e) => {
-              e.target.style.backgroundColor = "#024A59";
-              e.target.style.transform = "translateY(0)";
-            }}
-          >
-            Get Started Now
-          </button>
+      style={{
+        backgroundColor: "#024A59",
+        color: "#fff",
+        padding: "15px 40px",
+        borderRadius: "30px",
+        border: "none",
+        fontSize: "1.1rem",
+        fontWeight: "600",
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+      onMouseOver={(e) => {
+        e.target.style.backgroundColor = "#01303b";
+        e.target.style.transform = "translateY(-2px)";
+      }}
+      onMouseOut={(e) => {
+        e.target.style.backgroundColor = "#024A59";
+        e.target.style.transform = "translateY(0)";
+      }}
+      onClick={() => navigate("/contact")}
+    >
+      Get Started Now
+    </button>
         </div>
       </div>
     </>
