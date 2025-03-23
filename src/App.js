@@ -45,8 +45,8 @@ import Topbar from './components/Topbar';
 const App = () => {
   return (
     <>
+    <Navbar />
     <Topbar/>
-      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
