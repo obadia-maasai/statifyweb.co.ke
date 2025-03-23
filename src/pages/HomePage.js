@@ -14,7 +14,7 @@ import azure from "../assests/images/azure-icon.png"
 //import about1 from "../assests/images/about-1.jpg"
 //import about2 from "../assests/images/about-2.jpg"
 import ErpImg3 from "../assests/images/ErpImg3.jpg";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 
