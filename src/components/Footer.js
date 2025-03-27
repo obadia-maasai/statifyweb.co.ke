@@ -243,7 +243,8 @@ const Footer = () => {
           {/* Company Info Column */}
           <div>
             <img 
-              src={logo} 
+              src={logo}
+              href='/' 
               alt="Statify Logo" 
               style={{ 
                 width: '160px', 
@@ -256,12 +257,13 @@ const Footer = () => {
               onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
             />
-            <p style={{ 
+            <p  style={{ 
               color: '#FFA916', 
-              fontSize: '1.2rem',
-              fontWeight: '700',
+              fontSize: '1.0rem',
+              // fontWeight: '700',
               marginBottom: '12px',
-              letterSpacing: '0.5px'
+              letterSpacing: '0.5px',
+              fontStyle:'oblique'
             }}>
               Statify Solutions Limited
             </p>
