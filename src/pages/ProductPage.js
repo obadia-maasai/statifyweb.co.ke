@@ -803,7 +803,7 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
 import CountUp from "react-countup";
-import { Smile, CheckCircle, Users, Clock, Banknote, Stethoscope, Factory, ShoppingCart,  Book, Locate, House, MonitorPauseIcon, GitGraph, Grape, ChartBar, LineChart } from 'lucide-react';
+import { Smile, CheckCircle, Users, Clock, Banknote, Stethoscope, Factory, ShoppingCart,  Book, Locate, House, MonitorPauseIcon,  LineChart } from 'lucide-react';
 import WhyChooseUs from "./WhyChooseUs";
 import header from "../assests/images/about-1.jpg";
 import business from "../assests/images/business-central-icon.png";
