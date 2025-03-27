@@ -125,8 +125,7 @@
 
 import React from 'react';
 import logo from "../assests/images/logo.jpg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const socialButtonStyle = {
@@ -149,23 +148,26 @@ const Footer = () => {
   };
 
   const linkStyle = {
-    color: "#FFA916",
+    color: "rgba(255,255,255,0.9)",
     textDecoration: 'none',
     transition: 'all 0.3s ease',
-    padding: '4px 0',
+    padding: '6px 0',
     display: 'block',
     ':hover': {
-      color: '#ffffff',
-      transform: 'translateX(5px)'
+      color: '#FFA916',
+      transform: 'translateX(5px)',
+      textDecoration: 'underline'
     }
   };
 
   return (
     <div style={{ 
-      backgroundColor: '#024A59',
+      backgroundColor: "#000000",
+      backgroundImage: 'linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.95)), url(https://www.transparenttextures.com/patterns/diagonal-striped-brick.png)',
       padding: '60px 0 0',
       position: 'relative',
-      borderTop: '3px solid #FFA916'
+      borderTop: '3px solid #FFA916',
+      boxShadow: '0 -10px 30px rgba(0,0,0,0.3)'
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <div style={{ 
@@ -176,35 +178,35 @@ const Footer = () => {
         }}>
           {/* Address Column */}
           <div>
-            <h5 style={{ color: '#FFA916', fontSize: '1.25rem', marginBottom: '20px' }}>Address</h5>
+            <h5 style={{ color: '#FFA916', fontSize: '1.3rem', marginBottom: '25px', fontWeight: '600' }}>Get in Touch</h5>
             <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <i className="fa fa-map-marker-alt" style={{ color: '#FFA916', fontSize: '1.2rem' }}></i>
-              <p style={{ color: '#ffffff', margin: 0 }}>Ngong, Uptown Mall</p>
+              <MapPin color="#FFA916" size={20} />
+              <p style={{ color: 'rgba(255,255,255,0.9)', margin: 0 }}>Ngong, Uptown Mall</p>
             </div>
             <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <i className="fa fa-phone-alt" style={{ color: '#FFA916', fontSize: '1.2rem' }}></i>
+              <Phone color="#FFA916" size={20} />
               <div>
-                <a href="https://wa.me/254796265933" style={{ ...linkStyle, display: 'block' }}>+254796265933</a>
-                <a href="https://wa.me/254728813009" style={{ ...linkStyle, display: 'block' }}>+254728813009</a>
+                <a href="https://wa.me/254796265933" style={linkStyle}>+254796265933</a>
+                <a href="https://wa.me/254728813009" style={linkStyle}>+254728813009</a>
               </div>
             </div>
             <div style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <i className="fa fa-envelope" style={{ color: '#FFA916', fontSize: '1.2rem' }}></i>
+              <Mail color="#FFA916" size={20} />
               <a href="mailto:info@statify.co.ke" style={linkStyle}>info@statify.co.ke</a>
             </div>
-            <div style={{ display: 'flex', gap: '15px', marginTop: '20px' }}>
+            <div style={{ display: 'flex', gap: '15px', marginTop: '25px' }}>
               {[
-                { icon: faFacebookF, url: 'https://facebook.com' },
-                { icon: faTwitter, url: 'https://twitter.com' },
-                { icon: faLinkedinIn, url: 'https://linkedin.com' },
-                { icon: faInstagram, url: 'https://instagram.com' }
-              ].map((social, index) => (
+                { Icon: Facebook, url: 'https://facebook.com' },
+                { Icon: Twitter, url: 'https://twitter.com' },
+                { Icon: Linkedin, url: 'https://linkedin.com' },
+                { Icon: Instagram, url: 'https://instagram.com' }
+              ].map(({ Icon, url }, index) => (
                 <button
                   key={index}
-                  onClick={() => window.open(social.url, '_blank')}
+                  onClick={() => window.open(url, '_blank')}
                   style={socialButtonStyle}
                 >
-                  <FontAwesomeIcon icon={social.icon} />
+                  <Icon size={20} color="currentColor" />
                 </button>
               ))}
             </div>
@@ -212,11 +214,13 @@ const Footer = () => {
 
           {/* Services Column */}
           <div>
-            <h5 style={{ color: '#FFA916', fontSize: '1.25rem', marginBottom: '20px' }}>Services</h5>
+            <h5 style={{ color: '#FFA916', fontSize: '1.3rem', marginBottom: '25px', fontWeight: '600' }}>Our Services</h5>
             {[
               'Strategic Business Consultancy',
               'Data-Driven Business Solutions',
-              'Integrated ERP Solutions'
+              'Integrated ERP Solutions',
+              'Custom Software Development',
+              'Business Process Automation'
             ].map((service, index) => (
               <a key={index} href="/services" style={linkStyle}>{service}</a>
             ))}
@@ -224,66 +228,73 @@ const Footer = () => {
 
           {/* Quick Links Column */}
           <div>
-            <h5 style={{ color: '#FFA916', fontSize: '1.25rem', marginBottom: '20px' }}>Quick Links</h5>
+            <h5 style={{ color: '#FFA916', fontSize: '1.3rem', marginBottom: '25px', fontWeight: '600' }}>Quick Links</h5>
             {[
               { text: 'Home', url: '/' },
               { text: 'About Us', url: '/about' },
               { text: 'Contact Us', url: '/contact' },
-              { text: 'Our Services', url: '/services' },
-              { text: 'Our Products', url: '/products' }
+              { text: 'Products', url: '/products' },
+              { text: 'Privacy Policy', url: '/privacy' }
             ].map((link, index) => (
               <a key={index} href={link.url} style={linkStyle}>{link.text}</a>
             ))}
           </div>
 
-          {/* Logo Column */}
+          {/* Company Info Column */}
           <div>
             <img 
               src={logo} 
               alt="Statify Logo" 
               style={{ 
-                width: '140px', 
+                width: '160px', 
                 height: 'auto', 
-                marginBottom: '20px',
+                marginBottom: '25px',
                 transition: 'transform 0.3s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                filter: 'brightness(110%) drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
               }}
               onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
             />
             <p style={{ 
               color: '#FFA916', 
-              fontSize: '1.1rem',
-              fontWeight: '600',
-              marginBottom: '8px'
+              fontSize: '1.2rem',
+              fontWeight: '700',
+              marginBottom: '12px',
+              letterSpacing: '0.5px'
             }}>
               Statify Solutions Limited
             </p>
-            <p style={{ 
-              color: 'rgba(255,255,255,0.7)', 
-              fontSize: '0.9rem',
-              fontStyle: 'italic'
+            {/* <p style={{ 
+              color: 'rgba(255,255,255,0.8)', 
+              fontSize: '1rem',
+              lineHeight: '1.6',
+              maxWidth: '280px'
             }}>
-              Innovating Business Excellence
-            </p>
+              Empowering businesses through innovative digital solutions and strategic technology partnerships.
+            </p> */}
           </div>
         </div>
 
         {/* Copyright Section */}
-        {/* <div style={{
-          borderTop: '1px solid rgba(255,169,22,0.2)',
-          padding: '20px 0',
-          marginTop: '40px',
+        <div style={{
+          borderTop: '1px solid rgba(255,169,22,0.3)',
+          // padding: '25px 0',
+          // marginTop: '40px',
           textAlign: 'center'
         }}>
           <p style={{ 
             color: 'rgba(255,255,255,0.7)', 
             margin: 0,
-            fontSize: '0.9rem'
+            fontSize: '0.9rem',
+            letterSpacing: '0.5px'
           }}>
-            © {new Date().getFullYear()} Statify Solutions. All rights reserved.
+            © {new Date().getFullYear()}<a href='/statify.co.ke' style={{color:'#FFA916'}}> Statify Solutions.</a> All rights reserved. | 
+            <a href="/" style={{ color: '#FFA916', textDecoration: 'none', marginLeft: '8px' }}>
+              Terms of Service
+            </a>
           </p>
-        </div> */}
+        </div>
       </div>
     </div>
   );

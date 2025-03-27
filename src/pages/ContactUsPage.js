@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import header from "../assests/images/carousel-1.jpg"
 import Swal from 'sweetalert2';
+import { Mail, MapPin, PhoneCall } from 'lucide-react';
 
 
 const ContactUs = () => {
@@ -74,11 +75,11 @@ const ContactUs = () => {
   className="container-fluid page-header py-1 mb-2 wow fadeIn justify-content-center text-center"
   data-wow-delay="0.1s"
   style={{
-    backgroundImage: `url(${header})`, // Replace 'header' with the correct image path
-    backgroundSize: "cover", // Ensures the image covers the entire background
-    backgroundPosition: "center", // Centers the background image
-    backgroundRepeat: "no-repeat", // Prevents tiling of the image
-    height: "200px", // Reduced height to make it slimmer
+    backgroundImage: `url(${header})`, 
+    backgroundSize: "cover", 
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat", 
+    height: "200px",
   }}
 >
   <div className="container py-2">
@@ -99,7 +100,7 @@ const ContactUs = () => {
           </a>
         </li>
         <li className="breadcrumb-item">
-          <p href="#" style={{ color: '#FFA916', marginBottom: 0 }}>
+          <p href="#" style={{ color: '#FFA916'}}>
             Pages
           </p>
         </li>
@@ -123,7 +124,7 @@ const ContactUs = () => {
       <div
         className="col-lg-6"
         style={{
-          animation: 'slideInLeft 1s ease-in-out',
+          animation: 'slideInLeft 2s ease-in-out',
           animationFillMode: 'both',
         }}
       >
@@ -294,7 +295,8 @@ const ContactUs = () => {
             <div className="col-lg-4">
               <div className="h-100 rounded d-flex align-items-center p-5" style={{ backgroundColor: '#024A59' }}>
                 <div className="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style={{ width: '55px', height: '55px' }}>
-                  <i className="fa fa-map-marker-alt" style={{ color: '#FFA916' }}></i>
+                  {/* <i className="fa fa-map-marker-alt" style={{ color: '#FFA916' }}></i> */}
+                  <MapPin style={{color:'FFA16'}}/>
                 </div>
                 <div className="ms-4">
                   <p className="mb-2" style={{ color: '#FFA916' }}>
@@ -309,7 +311,8 @@ const ContactUs = () => {
             <div className="col-lg-4">
               <div className="h-100 rounded d-flex align-items-center p-5" style={{ backgroundColor: '#024A59' }}>
                 <div className="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style={{ width: '55px', height: '55px' }}>
-                  <i className="fa fa-phone-alt" style={{ color: '#FFA916' }}></i>
+                  {/* <i className="fa fa-phone-alt" style={{ color: '#FFA916' }}></i> */}
+                  <PhoneCall style={{color:'FFA16'}}/>
                 </div>
                 <div className="ms-4">
                   <p className="mb-2" style={{ color: '#FFA916' }}>
@@ -325,7 +328,8 @@ const ContactUs = () => {
             <div className="col-lg-4">
               <div className="h-100 rounded d-flex align-items-center p-5" style={{ backgroundColor: '#024A59' }}>
                 <div className="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style={{ width: '55px', height: '55px' }}>
-                  <i className="fa fa-envelope-open" style={{ color: '#FFA916' }}></i>
+                  {/* <i className="fa fa-envelope-open" style={{ color: '#FFA916' }}></i> */}
+                  <Mail style={{color:'FFA16'}}/>
                 </div>
                 <div className="ms-4">
                   <p className="mb-2" style={{ color: '#FFA916' }}>
@@ -391,7 +395,7 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
-
+                    
 
 // import React, { useState } from 'react';
 // import "../App.css"

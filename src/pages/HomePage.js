@@ -1,21 +1,15 @@
 import React from "react";
 import "../App.css"
 import carousel1 from "../assests/images/carousel-1.jpg"
-//import carousel2 from "../assests/images/carousel-1.jpg"
-//import carousel3 from "../assests/images/about-1.jpg"
-//import carousel4 from "../assests/images/header-page.jpg"
-// import carousel5 from "../assests/images/about-2.jpg"
-//import CoreValues from "./CoreValuesPage";
+
 import business from "../assests/images/business-central-icon.png"
 import dynamicsicon from "../assests/images/dynamics-icon.png"
 import crm from "../assests/images/crm-icon.png"
 import azure from "../assests/images/azure-icon.png"
-//import WhyChooseUs from "./WhyChooseUs";
-//import about1 from "../assests/images/about-1.jpg"
-//import about2 from "../assests/images/about-2.jpg"
+
 import ErpImg3 from "../assests/images/ErpImg3.jpg";
 import WhyChooseUs from "./WhyChooseUs";
-// import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 
 
@@ -680,3 +674,298 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// import { Link } from 'react-router-dom';
+// import {
+//   Briefcase,
+//   ChartBar,
+//   Lightbulb,
+//   Network,
+//   CheckCircle,
+//   Building,
+//   Settings
+// } from 'lucide-react';
+// import ErpImg3 from "../assests/images/ErpImg3.jpg";
+// import business from "../assests/images/business-central-icon.png";
+// import dynamicsicon from "../assests/images/dynamics-icon.png";
+// import crm from "../assests/images/crm-icon.png";
+// import azure from "../assests/images/azure-icon.png";
+// import WhyChooseUs from "./WhyChooseUs";
+// import { faGear } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+
+// const HomePage = () => {
+//   const services = [
+//     { icon: Network, title: "Integrated ERP Solutions", text: "Streamline operations from finance to CRM with tailored Microsoft solutions" },
+//   { icon: ChartBar, title: "Data Driven Solutions", text: "Harness advanced analytics for data-driven decision making" },
+//   { icon: Lightbulb, title: "Strategic Consultancy", text: "Navigate business complexities with growth-focused strategies" },
+//   { icon: Settings, title: "Custom Solutions", text: "Tailored systems for your unique business requirements" } 
+//   ];
+
+//   const products = [
+//     { icon: dynamicsicon, title: "Dynamics 365 Office", text: "Enhance productivity with powerful business tools" },
+//     { icon: business, title: "Business Central/NAV", text: "All-in-one business management solution" },
+//     { icon: crm, title: "Dynamics CRM", text: "Build strong customer relationships" },
+//     { icon: azure, title: "Microsoft Azure", text: "Cloud solutions for unmatched scalability" }
+//   ];
+
+//   const industries = [
+//     "Healthcare", "Finance", "Manufacturing", "Supply Chain",
+//     "Human Resource", "Education", "NGO", "Tours & Travel"
+//   ];
+
+//   return (
+//     <div className="overflow-hidden">
+//       {/* Hero Section */}
+//       <section 
+//         className="relative bg-cover bg-center h-[700px] animate-fade-in"
+//         style={{ backgroundImage: `url(${ErpImg3})` }}
+//       >
+//         <div className="absolute inset-0 bg-gradient-to-r from-[#024A59]/90 to-[#FFA916]/70" />
+//         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+//           <div className="text-white max-w-2xl animate-slide-up">
+//             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+//               Transform Your Business <br/>
+//               <span className="text-[#FFA916]">With Smart ERP Solutions</span>
+//             </h1>
+//             <p className="text-xl mb-8 md:text-2xl md:leading-relaxed">
+//               Streamline operations and drive growth with cutting-edge ERP systems
+//               tailored to your organizational needs.
+//             </p>
+//             <Link
+//               to="/contact"
+//               className="inline-block bg-[#FFA916] text-[#024A59] px-8 py-4 rounded-xl text-lg 
+//               font-semibold hover:bg-[#f4a110] transition-all shadow-lg hover:scale-105"
+//             >
+//               Start Digital Transformation
+//             </Link>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Company Overview */}
+//       <section className="py-20 bg-white">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="text-center mb-16 animate-fade-in">
+//             <h2 className="text-4xl font-bold text-[#024A59] mb-4">
+//               About <span className="text-[#FFA916]">Statify Solutions</span>
+//             </h2>
+//             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+//               We empower organizations to streamline operations and achieve sustainable growth through
+//               cutting-edge ERP solutions and digital transformation strategies.
+//             </p>
+//           </div>
+
+//           <div className="grid md:grid-cols-2 gap-12 items-center">
+//             <div className="relative animate-slide-left">
+//               <div className="bg-[#024A59]/10 rounded-2xl p-8">
+//                 <div className="bg-gray-200 h-96 rounded-2xl shadow-xl" />
+//               </div>
+//             </div>
+
+//             <div className="space-y-6 animate-slide-right">
+//               {[
+//                 "15+ Years Industry Experience",
+//                 "Certified Microsoft Partners",
+//                 "100+ Successful Implementations",
+//                 "24/7 Technical Support"
+//               ].map((item, index) => (
+//                 <div key={index} className="flex items-start gap-4">
+//                   <div className="bg-[#FFA916] p-2 rounded-lg">
+//                     <CheckCircle className="h-6 w-6 text-white" />
+//                   </div>
+//                   <h3 className="text-xl font-semibold text-gray-800">{item}</h3>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Services Section */}
+//       <section className="py-20 bg-[#f8fafb]">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="text-center mb-16 animate-fade-in">
+//             <h2 className="text-4xl font-bold text-[#024A59] mb-4">
+//               Our <span className="text-[#FFA916]">Services</span>
+//             </h2>
+//             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+//               Comprehensive solutions for digital transformation and business growth
+//             </p>
+//           </div>
+
+//           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+//             {services.map((service, index) => (
+//               <div
+//                 key={index}
+//                 className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all 
+//                 animate-card-pop delay-100 hover:scale-105"
+//               >
+//                 <div className="bg-[#024A59] w-max p-4 rounded-xl mb-6">
+//                   <service.icon className="h-8 w-8 text-white" />
+//                 </div>
+//                 <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
+//                 <p className="text-gray-600 leading-relaxed">{service.text}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Products Section */}
+//       <section className="py-20 bg-white">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="text-center mb-16 animate-fade-in">
+//             <h2 className="text-4xl font-bold text-[#024A59] mb-4">
+//               Microsoft <span className="text-[#FFA916]">Products</span>
+//             </h2>
+//             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+//               Leverage world-class solutions for enterprise management and productivity
+//             </p>
+//           </div>
+
+//           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+//             {products.map((product, index) => (
+//               <div
+//                 key={index}
+//                 className="bg-[#f8fafb] p-8 rounded-2xl text-center hover:shadow-lg transition-all
+//                 animate-card-pop delay-200 hover:scale-105"
+//               >
+//                 <div className="bg-white p-4 rounded-full w-max mx-auto mb-6">
+//                   <img src={product.icon} alt={product.title} className="h-12 w-12" />
+//                 </div>
+//                 <h3 className="text-xl font-bold text-gray-800 mb-3">{product.title}</h3>
+//                 <p className="text-gray-600 text-sm">{product.text}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Industries Section */}
+//       <section className="py-20 bg-[#024A59]">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="text-center mb-16 animate-fade-in">
+//             <h2 className="text-4xl font-bold text-white mb-4">
+//               Industries <span className="text-[#FFA916]">We Serve</span>
+//             </h2>
+//             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+//               Customized solutions for diverse industry verticals
+//             </p>
+//           </div>
+
+//           <div className="grid md:grid-cols-4 gap-6">
+//             {industries.map((industry, index) => (
+//               <div
+//                 key={index}
+//                 className="bg-white/10 p-6 rounded-xl backdrop-blur-sm hover:bg-white/20 
+//                 transition-all animate-fade-in delay-300"
+//               >
+//                 <div className="flex items-center gap-3">
+//                   <Building className="h-6 w-6 text-[#FFA916]" />
+//                   <h3 className="text-lg font-semibold text-white">{industry}</h3>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* CTA Section */}
+//       <section className="relative py-24 bg-gradient-to-br from-[#024A59] to-[#01303b]">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+//           <div className="animate-scale-in">
+//             <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
+//               Ready to Transform Your Business?
+//             </h2>
+//             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+//               Start your digital transformation journey with our expert guidance and
+//               cutting-edge ERP solutions.
+//             </p>
+//             <Link
+//               to="/contact"
+//               className="bg-[#FFA916] text-[#024A59] px-10 py-4 rounded-xl text-lg 
+//               font-bold hover:bg-[#f4a110] transition-all shadow-lg flex items-center 
+//               justify-center space-x-2 mx-auto hover:scale-105"
+//             >
+//               <Briefcase className="w-6 h-6" />
+//               <span>Schedule Free Consultation</span>
+//             </Link>
+//           </div>
+//         </div>
+//       </section>
+
+//       <WhyChooseUs />
+
+//       <style jsx global>{`
+//         @keyframes fade-in {
+//           from { opacity: 0; }
+//           to { opacity: 1; }
+//         }
+
+//         @keyframes slide-up {
+//           from { transform: translateY(50px); opacity: 0; }
+//           to { transform: translateY(0); opacity: 1; }
+//         }
+
+//         @keyframes slide-left {
+//           from { transform: translateX(-50px); opacity: 0; }
+//           to { transform: translateX(0); opacity: 1; }
+//         }
+
+//         @keyframes slide-right {
+//           from { transform: translateX(50px); opacity: 0; }
+//           to { transform: translateX(0); opacity: 1; }
+//         }
+
+//         @keyframes card-pop {
+//           from { transform: scale(0.9); opacity: 0; }
+//           to { transform: scale(1); opacity: 1; }
+//         }
+
+//         @keyframes scale-in {
+//           from { transform: scale(0.95); opacity: 0; }
+//           to { transform: scale(1); opacity: 1; }
+//         }
+
+//         .animate-fade-in {
+//           animation: fade-in 0.8s ease-out;
+//         }
+
+//         .animate-slide-up {
+//           animation: slide-up 0.8s ease-out;
+//         }
+
+//         .animate-slide-left {
+//           animation: slide-left 0.8s ease-out;
+//         }
+
+//         .animate-slide-right {
+//           animation: slide-right 0.8s ease-out;
+//         }
+
+//         .animate-card-pop {
+//           animation: card-pop 0.6s ease-out;
+//         }
+
+//         .animate-scale-in {
+//           animation: scale-in 0.6s ease-out;
+//         }
+
+//         .delay-100 {
+//           animation-delay: 100ms;
+//         }
+
+//         .delay-200 {
+//           animation-delay: 200ms;
+//         }
+
+//         .delay-300 {
+//           animation-delay: 300ms;
+//         }
+//       `}</style>
+//     </div>
+//   );
+// };
+
+// export default HomePage;

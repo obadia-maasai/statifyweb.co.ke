@@ -108,6 +108,7 @@
 // export default WhyChooseUs;
 
 import React from 'react';
+import { ShieldCheck, CheckCheck, Move, Headphones } from 'lucide-react';
 import feature from "../assests/images/feature.jpg";
 import "../App.css";
 
@@ -173,80 +174,84 @@ const WhyChooseUs = () => {
               <div className="row g-4">
                 {[
                   { 
-                    icon: 'fa-user-shield', 
+                    icon: ShieldCheck, 
                     title: 'Industry Expertise',
                     desc: '15+ Years Experience',
                     color: '#FFA916'
                   },
                   { 
-                    icon: 'fa-check-double', 
+                    icon: CheckCheck, 
                     title: 'Comprehensive Solutions',
                     desc: 'End-to-End ERP Systems',
                     color: '#FFA916'
                   },
                   { 
-                    icon: 'fa-expand-arrows-alt', 
+                    icon: Move, 
                     title: 'Flexibility',
                     desc: 'Scalable Architecture',
                     color: '#FFA916'
                   },
                   { 
-                    icon: 'fa-headset', 
+                    icon: Headphones, 
                     title: '24/7 Support',
                     desc: 'Dedicated Assistance',
                     color: '#FFA916'
                   }
-                ].map((feature, index) => (
-                  <div 
-                    className="col-6" 
-                    key={index}
-                    style={{
-                      transition: 'transform 0.3s ease',
-                      cursor: 'pointer'
-                    }}
-                    onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                    onMouseOut={(e) => e.currentTarget.style.transform = 'none'}
-                  >
-                    <div className="d-flex align-items-center">
-                      <div 
-                        className="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle"
-                        style={{ 
-                          width: '65px', 
-                          height: '65px',
-                          backgroundColor: 'rgba(255,255,255,0.1)',
-                          border: `2px solid ${feature.color}`
-                        }}
-                      >
-                        <i 
-                          className={`fas ${feature.icon} fa-lg`} 
-                          style={{ color: feature.color }}
-                        ></i>
-                      </div>
-                      <div className="ms-3">
-                        <p 
-                          className="mb-1" 
-                          style={{
-                            color: '#FFA916',
-                            fontSize: '0.9rem',
-                            fontWeight: '500'
+                ].map((feature, index) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div 
+                      className="col-6" 
+                      key={index}
+                      style={{
+                        transition: 'transform 0.3s ease',
+                        cursor: 'pointer'
+                      }}
+                      onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                      onMouseOut={(e) => e.currentTarget.style.transform = 'none'}
+                    >
+                      <div className="d-flex align-items-center">
+                        <div 
+                          className="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle"
+                          style={{ 
+                            width: '65px', 
+                            height: '65px',
+                            backgroundColor: 'rgba(255,255,255,0.1)',
+                            border: `2px solid ${feature.color}`
                           }}
                         >
-                          {feature.desc}
-                        </p>
-                        <h5 
-                          className="mb-0" 
-                          style={{
-                            color: '#fff',
-                            fontSize: '1.1rem',
-                            fontWeight: '600'
-                          }}
-                        >
-                          {feature.title}
-                        </h5>
+                          <Icon 
+                            color={feature.color} 
+                            size={28}
+                            strokeWidth={1.5}
+                          />
+                        </div>
+                        <div className="ms-3">
+                          <p 
+                            className="mb-1" 
+                            style={{
+                              color: '#FFA916',
+                              fontSize: '0.9rem',
+                              fontWeight: '500'
+                            }}
+                          >
+                            {feature.desc}
+                          </p>
+                          <h5 
+                            className="mb-0" 
+                            style={{
+                              color: '#fff',
+                              fontSize: '1.1rem',
+                              fontWeight: '600'
+                            }}
+                          >
+                            {feature.title}
+                          </h5>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

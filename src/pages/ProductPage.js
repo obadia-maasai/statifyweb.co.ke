@@ -800,50 +800,82 @@
 
 // export default ProductsPage;
 
-import React, { useEffect } from "react";
-import "../App.css";
+import React, { useEffect, useState } from "react";
+import { useInView } from 'react-intersection-observer';
+import CountUp from "react-countup";
+import { Smile, CheckCircle, Users, Clock, Banknote, Stethoscope, Factory, ShoppingCart,  Book, Locate, House, MonitorPauseIcon, GitGraph, Grape, ChartBar, LineChart } from 'lucide-react';
+import WhyChooseUs from "./WhyChooseUs";
+import header from "../assests/images/about-1.jpg";
 import business from "../assests/images/business-central-icon.png";
 import dynamicsicon from "../assests/images/dynamics-icon.png";
 import crm from "../assests/images/crm-icon.png";
 import azure from "../assests/images/azure-icon.png";
-import header from "../assests/images/about-1.jpg";
-// import why from '../assests/images/carousel-1.jpg'
-import WhyChooseUs from "./WhyChooseUs";
 
 const ProductsPage = () => {
+  const [statsVisible, setStatsVisible] = useState(false);
+  const { ref: statsRef, inView: statsInView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref: industriesRef, inView: industriesInView } = useInView({ threshold: 0.2, triggerOnce: true });
+
   const industries = [
-    { name: "Healthcare", icon: "bi bi-heart-pulse", color: "#024A59" },
-    { name: "Finance", icon: "bi bi-cash-coin", color: "#FFA916" },
-    { name: "Manufacturing", icon: "bi bi-gear", color: "#024A59" },
-    { name: "Retail", icon: "bi bi-cart", color: "#FFA916" },
-    { name: "Education", icon: "bi bi-book", color: "#024A59" },
-    { name: "Logistics", icon: "bi bi-truck", color: "#FFA916" },
-    { name: "Hospitality", icon: "bi bi-house-door", color: "#024A59" },
-    { name: "Government", icon: "bi bi-bank", color: "#FFA916" },
+    {
+      name: 'Financial Services',
+      background: 'linear-gradient(135deg,rgb(173, 161, 131) 0%,rgb(244, 219, 174) 100%)',
+      icon: <Banknote style={{ width: 40, height: 40, color: '#024A59' }} />,
+      text: 'Secure banking solutions and financial technology innovations'
+    },
+    {
+      name: 'Healthcare',
+      background: 'linear-gradient(135deg,rgb(201, 234, 241) 0%,rgb(132, 172, 180) 100%)',
+      icon: <Stethoscope style={{ width: 40, height: 40, color: '#FFA916' }} />,
+      text: 'Advanced medical systems and patient care technologies'
+    },
+    {
+      name: 'Education',
+      background: 'linear-gradient(135deg,rgb(173, 161, 131) 0%,rgb(244, 219, 174)  100%)',
+      icon: <Book style={{ width: 40, height: 40, color: '#024A59' }} />,
+      text: 'Advanced medical systems and patient care technologies'
+    },
+    {
+      name: 'Manufacturing',
+      background: 'linear-gradient(135deg,rgb(201, 234, 241) 0%,rgb(132, 172, 180) 100%)',
+      icon: <Factory style={{ width: 40, height: 40, color: '#FFA916' }} />,
+      text: 'Industrial automation and smart factory solutions'
+    },
+    {
+      name: 'Retail',
+      background: 'linear-gradient(135deg,rgb(173, 161, 131) 0%,rgb(244, 219, 174)  100%)',
+      icon: <ShoppingCart style={{ width: 40, height: 40, color: '#024A59' }} />,
+      text: 'E-commerce platforms and inventory management systems'
+    },
+    {
+      name: 'Logistics',
+      background: 'linear-gradient(135deg,rgb(201, 234, 241) 0%,rgb(132, 172, 180) 100%)',
+      icon: <Locate style={{ width: 40, height: 40, color: '#FFA916' }} />,
+      text: 'E-commerce platforms and inventory management systems'
+    },
+    {
+      name: 'Government',
+      background: 'linear-gradient(135deg,rgb(173, 161, 131) 0%,rgb(244, 219, 174)  100%)',
+      icon: <House style={{ width: 40, height: 40, color: '#024A59' }} />,
+      text: 'E-commerce platforms and inventory management systems'
+    },
+    {
+      name: 'Human Resource',
+      background: 'linear-gradient(135deg,rgb(201, 234, 241) 0%,rgb(132, 172, 180) 100%)',
+      icon: <MonitorPauseIcon style={{ width: 40, height: 40, color: '#FFA916' }} />,
+      text: 'E-commerce platforms and inventory management systems',
+    },
   ];
 
   useEffect(() => {
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.scroll-animate');
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        const isVisible = elementTop < window.innerHeight && elementBottom >= 0;
-        
-        if (isVisible) {
-          element.classList.add('animated');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', animateOnScroll);
-    return () => window.removeEventListener('scroll', animateOnScroll);
-  }, []);
+    if (statsInView) setStatsVisible(true);
+  }, [statsInView]);
 
   return (
-    <>
-      {/* Page Header */}
-      <div
+    <div style={{ backgroundColor: '#f8fafc' }}>
+      
+       {/* Page Header */}
+       <div
         className="container-fluid page-header py-1 mb-2 wow fadeIn"
         data-wow-delay="0.1s"
         style={{
@@ -884,53 +916,31 @@ const ProductsPage = () => {
       <div className="container-xxl py-5">
         <div className="container">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: "600px" }}>
-            <h2 className="section-title text-gradient scroll-animate">Our Solutions</h2>
-            <p className="lead text-muted scroll-animate">
+            <h2 className="section-title text-gradient">Our Solutions</h2>
+            <p className="lead text-muted">
               Cutting-edge solutions designed to empower your business with seamless integrations
               and superior performance.
             </p>
           </div>
-          <div className="row g-4">
+          <div className="row g-4" >
+            
             {[
-              { 
-                img: dynamicsicon, 
-                title: "Microsoft Dynamics 365 Office", 
-                text: "Enhance productivity and collaboration with powerful business tools.",
-                features: ["ERP Integration", "Real-time Analytics", "Workflow Automation"]
-              },
-              { 
-                img: business, 
-                title: "Dynamics 365 Business Central/NAV", 
-                text: "Streamline operations and drive growth with all-in-one management.",
-                features: ["Financial Management", "Supply Chain", "Project Management"]
-              },
-              { 
-                img: crm, 
-                title: "Microsoft Dynamics CRM", 
-                text: "Build strong customer relationships with intuitive CRM tools.",
-                features: ["Customer Insights", "Sales Automation", "Service Management"]
-              },
-              { 
-                img: azure, 
-                title: "Microsoft Azure", 
-                text: "Leverage cloud power for unparalleled scalability and performance.",
-                features: ["Cloud Computing", "AI Services", "IoT Integration"]
-              }
+              { img: dynamicsicon, title: "Microsoft Dynamics 365 Office", 
+                text: "Enhance productivity and collaboration with powerful business tools." },
+              { img: business, title: "Dynamics 365 Business Central/NAV", 
+                text: "Streamline operations and drive growth with all-in-one management." },
+              { img: crm, title: "Microsoft Dynamics CRM", 
+                text: "Build strong customer relationships with intuitive CRM tools." },
+              { img: azure, title: "Microsoft Azure", 
+                text: "Leverage cloud power for unparalleled scalability and performance." }
             ].map((product, index) => (
-              <div key={index} className="col-lg-3 col-md-6 scroll-animate">
+              <div key={index} className="col-lg-3 col-md-6" > 
                 <div className="product-card animated-card">
                   <div className="icon-box bg-primary">
                     <img src={product.img} alt={product.title} />
                   </div>
                   <h5 className="mt-4">{product.title}</h5>
-                  <p className="text-muted mb-3">{product.text}</p>
-                  <div className="features-list">
-                    {product.features.map((feature, fIndex) => (
-                      <span key={fIndex} className="feature-badge">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-muted">{product.text}</p>
                 </div>
               </div>
             ))}
@@ -939,23 +949,51 @@ const ProductsPage = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="container-fluid py-5 stats-section">
-        <div className="container">
-          <div className="row g-4 text-center">
+      <div ref={statsRef} style={{
+        background: 'linear-gradient(45deg, #024A59, #006272)',
+        padding: '4rem 2rem',
+        color: 'white'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+            textAlign: 'center'
+          }}>
             {[
-              { number: 150, title: "Happy Clients" },
-              { number: 95, title: "Projects Completed", plus: "%" },
-              { number: 300, title: "Team Members", plus: "+" },
-              { number: 24, title: "Support Hours", plus: "/7" }
+              { number: 150, title: "Happy Clients", icon: <Smile size={40} color="#FFA916" /> },
+              { number: 95, title: "Projects Completed", icon: <CheckCircle size={40} color="#FFA916" /> },
+              { number: 300, title: "Team Members", icon: <Users size={40} color="#FFA916" /> },
+              { number: 24, title: "Support Hours", icon: <Clock size={40} color="#FFA916" /> }
             ].map((stat, index) => (
-              <div key={index} className="col-lg-3 col-md-6 scroll-animate">
-                <div className="stat-card">
-                  <h2 className="stat-number">
-                    {stat.number}
-                    <span className="stat-plus">{stat.plus}</span>
-                  </h2>
-                  <p className="stat-title">{stat.title}</p>
+              <div key={index} style={{
+                opacity: statsVisible ? 1 : 0,
+                transform: statsVisible ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.6s ease ${index * 0.2}s`,
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                backdropFilter: 'blur(5px)'
+              }}>
+                <div style={{
+                  background: 'rgba(255, 169, 22, 0.1)',
+                  width: '70px',
+                  height: '70px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 1rem'
+                }}>
+                  {stat.icon}
                 </div>
+                <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFA916', marginBottom: '0.5rem' }}>
+                  {statsVisible ? <CountUp end={stat.number} duration={2.5} /> : stat.number}
+                  {stat.title === 'Projects Completed' && '%'}
+                  {['Happy Clients', 'Team Members'].includes(stat.title) && '+'}
+                </h2>
+                <p style={{ fontSize: '1.1rem', margin: 0 }}>{stat.title}</p>
               </div>
             ))}
           </div>
@@ -963,23 +1001,93 @@ const ProductsPage = () => {
       </div>
 
       {/* Industries Section */}
-      <div className="container-fluid industries-section py-5">
+      <div ref={industriesRef} style={{ padding: '4rem 2rem' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 700,
+              color: '#1e293b',
+              marginBottom: '1rem'
+            }}>
+              Industries We Serve
+            </h2>
+            <p style={{ color: '#64748b', fontSize: '1.1rem' }}>
+              Tailored solutions for diverse industry needs
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '2rem',
+            padding: '1rem'
+          }}>
+            {industries.map((industry, index) => (
+              <div key={index} style={{
+                opacity: industriesInView ? 1 : 0,
+                transform: industriesInView ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.6s ease ${index * 0.2}s`
+              }}>
+                <div style={{
+                  background: industry.background,
+                  borderRadius: '16px',
+                  padding: '2rem',
+                  height: '100%',
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease',
+                  ':hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)'
+                  }
+                }}>
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    {industry.icon}
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem' }}>
+                    {industry.name}
+                  </h3>
+                  <p style={{ color: '#475569', lineHeight: 1.6 }}>
+                    {industry.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Core Features */}
+      <div className="container-fluid feature-section py-5">
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="section-title text-white scroll-animate">Industries We Serve</h2>
-            <p className="text-light scroll-animate">Tailored solutions for diverse industry needs</p>
+            <h2 className="section-title text-white">Core Features</h2>
           </div>
-          <div className="row g-4">
-            {industries.map((industry, index) => (
-              <div key={index} className="col-lg-3 col-md-6 scroll-animate">
-                <div 
-                  className="industry-card"
-                  style={{ backgroundColor: industry.color }}
-                >
-                  <div className="industry-icon">
-                    <i className={industry.icon}></i>
+          <div className="row g-4" >
+            {[
+              { title: "Finance & Accounting", 
+                text: "Comprehensive financial management solutions",
+                icon: "Finance"
+               },
+                
+              { title: "Supply Chain", 
+                text: "End-to-end supply chain optimization",
+                icon: "Finance" },
+              { title: "HR & Payroll", 
+                text: "Automated workforce management systems" ,              
+                icon: "Finance"},
+              { title: "Business Intelligence", 
+                icon: "Finance",
+                text: "Advanced analytics and reporting tools" }
+            ].map((feature, index) => (
+              <div key={index} className="col-lg-3 col-md-6" >
+                <div className="feature-card" style={{  background: 'linear-gradient(135deg,rgb(173, 161, 131) 0%,rgb(244, 219, 174) 100%)'}}>
+                  <div className="feature-icon">
+                    {/* <i className="bi bi-graph-up"></i> */}
+                    <LineChart style={{color:'FFA16'}}></LineChart>
                   </div>
-                  <h5>{industry.name}</h5>
+                  <h5 style={{color:'#024A59'}}>{feature.title}</h5>
+                  <p>{feature.text}</p>
                 </div>
               </div>
             ))}
@@ -988,99 +1096,97 @@ const ProductsPage = () => {
       </div>
 
       {/* Why Choose Us */}
-      {/* <div className="container-xxl py-5">
-        <div className="container">
-          <div className="row g-5 align-items-center">
-            <div className="col-lg-6 scroll-animate">
-              <img 
-                src={why} 
-                alt="Why Choose Us" 
-                className="img-fluid rounded-3 shadow"
-              />
-            </div>
-            <div className="col-lg-6 scroll-animate">
-              <h2 className="section-title text-gradient mb-4">Why Choose Us?</h2>
-              <div className="d-flex mb-4">
-                <div className="icon-box-sm bg-primary">
-                  <i className="bi bi-award"></i>
-                </div>
-                <div className="ms-4">
-                  <h5>Certified Experts</h5>
-                  <p className="mb-0">Microsoft certified professionals with industry expertise</p>
-                </div>
-              </div>
-              <div className="d-flex mb-4">
-                <div className="icon-box-sm bg-primary">
-                  <i className="bi bi-clock-history"></i>
-                </div>
-                <div className="ms-4">
-                  <h5>Fast Implementation</h5>
-                  <p className="mb-0">Rapid deployment with minimal business disruption</p>
-                </div>
-              </div>
-              <div className="d-flex">
-                <div className="icon-box-sm bg-primary">
-                  <i className="bi bi-shield-check"></i>
-                </div>
-                <div className="ms-4">
-                  <h5>Secure Solutions</h5>
-                  <p className="mb-0">Enterprise-grade security and compliance</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-<WhyChooseUs/>
-      <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
+      <WhyChooseUs />
 
+      <style jsx global>{`
         @keyframes slideIn {
-          from { transform: translateX(-100%); opacity: 0; }
-          to { transform: translateX(0); opacity: 1; }
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+          .section-title {
+           font-size: 2.5rem;
+           font-weight: 700;
+           margin-bottom: 1rem;
+           position: relative;
+           display: inline-block;
+         } 
+          
+           @keyframes fadeIn {
+             from { opacity: 0; transform: translateY(20px); }
+             to { opacity: 1; transform: translateY(0); }
+           }
+
+           @keyframes bounce {
+             0%, 100% { transform: translateY(0); }
+             50% { transform: translateY(-10px); }
+           }
+        
+
+         .section-title.text-gradient {
+           background: linear-gradient(45deg, #024A59, #FFA916);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+         }
+
+         .product-card {
+           background: white;
+           border-radius: 15px;
+           padding: 2rem;
+           margin-bottom: 1rem;
+           transition: all 0.3s ease;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+         }
+
+         .product-card:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+         }
+
+         .icon-box {
+           width: 80px;
+           height: 80px;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin: 0 auto 1.5rem;
+           transition: all 0.3s ease;
+         }
+
+         .feature-section {
+           background: linear-gradient(45deg, #024A59, #006272);
+           color: white;
+           position: relative;
+           overflow: hidden;
         }
 
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0px); }
+         .feature-card {
+          background: rgba(255,255,255,0.1);           padding: 2rem;
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
         }
+          @keyframes float {
+           0% { transform: translateY(0px); }
+           50% { transform: translateY(-20px); }
+           100% { transform: translateY(0px); }
+         }
 
-        .scroll-animate {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: all 0.6s ease-out;
-        }
+         .animated-card {
+           animation: float 4s ease-in-out infinite;
+         }
 
-        .scroll-animate.animated {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .section-title {
-          font-size: 2.5rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-          position: relative;
-        }
-
-        .section-title.text-gradient {
-          background: linear-gradient(45deg, #024A59, #FFA916);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        .product-card {
+         @media (max-width: 768px) {
+           .section-title {
+             font-size: 2rem;
+           }
+         product-card {
           background: white;
           border-radius: 15px;
           padding: 2rem;
           margin-bottom: 1rem;
           transition: all 0.3s ease;
           box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-          height: 100%;
         }
 
         .product-card:hover {
@@ -1097,80 +1203,25 @@ const ProductsPage = () => {
           justify-content: center;
           margin: 0 auto 1.5rem;
           transition: all 0.3s ease;
-          background: linear-gradient(45deg, #024A59, #006272);
         }
 
-        .features-list {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-top: 1rem;
-        }
-
-        .feature-badge {
-          background: rgba(2, 74, 89, 0.1);
-          color: #024A59;
-          padding: 4px 12px;
-          border-radius: 20px;
-          font-size: 0.9rem;
-        }
-
-        .stats-section {
-          background: linear-gradient(45deg, #024A59, #006272);
+        .feature-section {
+          background: linear-gradient(45deg, #024A59, #FFA916);
           color: white;
+          position: relative;
+          overflow: hidden;
         }
 
-        .stat-card {
-          padding: 2rem;
+        .feature-card {
           background: rgba(255,255,255,0.1);
-          border-radius: 15px;
-          backdrop-filter: blur(5px);
-        }
-
-        .stat-number {
-          font-size: 3rem;
-          font-weight: 700;
-          color: #FFA916;
-        }
-
-        .industries-section {
-          background: #f8f9fa;
-        }
-
-        .industry-card {
           padding: 2rem;
-          text-align: center;
           border-radius: 15px;
-          color: white;
+          backdrop-filter: blur(10px);
           transition: all 0.3s ease;
-          min-height: 200px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
 
-        .industry-card:hover {
-          transform: scale(1.05);
-        }
-
-        .industry-icon {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          animation: float 3s ease-in-out infinite;
-        }
-
-        @media (max-width: 768px) {
-          .section-title {
-            font-size: 2rem;
-          }
-          
-          .stat-number {
-            font-size: 2rem;
-          }
-        }
       `}</style>
-    </>
+    </div>
   );
 };
 
